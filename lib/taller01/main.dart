@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'The 1975 App',
+      title: 'Taller01',
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String title = 'Hola, The 1975';
+  String title = 'The 1975';
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +66,9 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    title = (title == 'Hola, The 1975')
+                    title = (title == 'The 1975')
                         ? '¡Título cambiado!'
-                        : 'Hola, The 1975';
+                        : 'The 1975';
                   });
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Título actualizado')),
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   children: const [
                     ListTile(
-                      leading: Icon(Icons.music_note, color: Colors.pink),
+                      leading: Icon(Icons.music_note_outlined, color: Colors.pink),
                       title: Text("Love It If We Made It"),
                     ),
                     ListTile(
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                       title: Text("Somebody Else"),
                     ),
                     ListTile(
-                      leading: Icon(Icons.music_note, color: Colors.pink),
+                      leading: Icon(Icons.music_note_rounded, color: Colors.pink),
                       title: Text("If You’re Too Shy (Let Me Know)"),
                     ),
                   ],
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                        content: Text("Escuchando The 1975 en tu mente 🎧")),
+                        content: Text("Escuchando The 1975 en tu mente...")),
                   );
                 },
                 icon: const Icon(Icons.play_circle_outline),
