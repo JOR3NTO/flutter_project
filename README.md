@@ -92,6 +92,9 @@ Captura del **Pull Request** creado desde la rama `feature/taller1` hacia `dev`,
 ### Evidencia 5 – Pull Request dev → main  
 Captura del **Pull Request** creado desde la rama `dev` hacia `main`, donde se integran las funcionalidades finales en la rama principal.  
 
+<img width="944" height="775" alt="image" src="https://github.com/user-attachments/assets/85bf16c2-89b2-4547-bc24-3c7c9f5e7620" />
+
+
 
 
 
