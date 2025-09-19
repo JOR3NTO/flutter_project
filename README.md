@@ -5,33 +5,42 @@
 
 ---
 
+
 ## Descripción
 
-Este proyecto corresponde al **Taller 1 de Flutter**. Se desarrolló una aplicación que cumple con los siguientes requisitos:
-
-- Uso de `setState()` para cambiar dinámicamente el título en la AppBar.
-- Botón que muestra un `SnackBar` al actualizar el estado.
-- Inclusión de imágenes mediante `Image.network` e `Image.asset`.
-- Uso de al menos **dos widgets adicionales**.
+Este proyecto corresponde al **Taller 1 de Flutter**. La aplicación implementa navegación avanzada, paso de parámetros, ciclo de vida de widgets y el uso de varios widgets complejos.
 
 ---
 
-## Componentes principales
+## Arquitectura y Navegación
 
-La aplicación utiliza los siguientes widgets de Flutter:
+La navegación se implementa usando [`go_router`](https://pub.dev/packages/go_router), permitiendo rutas nombradas, paso de parámetros y diferentes métodos de navegación:
 
-- **AppBar:** Título dinámico con `setState`.
-- **Text:** Muestra el nombre del estudiante.
-- **Row:** Disposición horizontal de imágenes.
-- **Image.network:** Carga una imagen desde la web.
-- **Image.asset:** Carga una imagen local.
-- **ElevatedButton:** Botón principal que cambia el título.
-- **SnackBar:** Mensaje de confirmación al cambiar el título.
-- **Container:** Con márgenes, colores y bordes.
-- **ListView:** Lista con íconos y texto.
-- **Stack:** Superposición de texto sobre una imagen.
-- **OutlinedButton.icon:** Botón adicional con ícono y acción secundaria.
-- **Padding, SizedBox, Column, SingleChildScrollView:** Organización del diseño visual.
+- **go:** Reemplaza toda la navegación anterior (no permite volver atrás).
+- **push:** Agrega una nueva pantalla encima de la actual (permite volver atrás).
+- **replace:** Reemplaza la pantalla actual en la pila (no elimina el historial anterior).
+
+### Rutas principales
+
+- `/` : Pantalla principal (HomeScreen)
+- `/paso_parametros` : Demostración de paso de parámetros y navegación (go, push, replace)
+- `/detalle/:parametro/:metodo` : Muestra el valor del parámetro recibido y el método de navegación
+- `/ciclo_vida` : Evidencia del ciclo de vida de un StatefulWidget
+- `/widgets_demo` : Demostración de GridView, TabBar y ListView
+
+### Paso de parámetros
+Desde `/paso_parametros` se puede navegar a `/detalle/:parametro/:metodo` enviando valores por la URL. En la pantalla de detalle se muestra el valor recibido y el método de navegación utilizado.
+
+---
+
+## Widgets usados y razón de su elección
+
+- **GridView:** Para mostrar una cuadrícula de elementos de forma eficiente y responsiva.
+- **TabBar + TabBarView:** Para manejar diferentes secciones dentro de una pantalla, permitiendo navegación horizontal entre vistas.
+- **ListView:** Para mostrar listas verticales de elementos.
+- **Drawer personalizado:** Para navegación lateral y acceso rápido a las diferentes rutas.
+- **Ciclo de vida (initState, didChangeDependencies, build, setState, dispose):** Evidenciado en las pantallas `HomeScreen` y `CicloVidaScreen` con prints y comentarios.
+- **Otros widgets:** AppBar, Text, ElevatedButton, Icon, Card, etc.
 
 ---
 
