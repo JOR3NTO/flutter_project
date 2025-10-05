@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_drawer.dart';
 
 class WidgetsDemoScreen extends StatefulWidget {
   const WidgetsDemoScreen({super.key});
@@ -28,6 +29,12 @@ class _WidgetsDemoScreenState extends State<WidgetsDemoScreen> with SingleTicker
     return Scaffold(
       appBar: AppBar(
         title: const Text('Demo de Widgets'),
+        leading: Navigator.of(context).canPop()
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.of(context).pop(),
+              )
+            : null,
         bottom: TabBar(
           controller: _tabController,
           tabs: const [
@@ -36,15 +43,7 @@ class _WidgetsDemoScreenState extends State<WidgetsDemoScreen> with SingleTicker
           ],
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: const [
-            DrawerHeader(child: Text('Menú de ejemplo')),
-            ListTile(leading: Icon(Icons.home), title: Text('Inicio')),
-            ListTile(leading: Icon(Icons.settings), title: Text('Ajustes')),
-          ],
-        ),
-      ),
+      drawer: const CustomDrawer(),
       body: TabBarView(
         controller: _tabController,
         children: [

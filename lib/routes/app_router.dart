@@ -5,6 +5,11 @@ import '../views/paso_parametros/detalle_screen.dart';
 import '../views/paso_parametros/paso_parametros_screen.dart';
 import '../views/home/home_screen.dart';
 import '../views/widgets_demo_screen.dart';
+import '../views/future/async_demo_screen.dart';
+import '../views/timer_screen.dart';
+import '../views/insolate/isolate_demo_screen.dart';
+import '../views/pokemons/pokemon_list_view.dart';
+import '../views/pokemons/pokemon_detail_view.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [
@@ -41,6 +46,34 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/widgets_demo',
       builder: (context, state) => const WidgetsDemoScreen(),
+    ),
+    // Ruta para demo de Future/async/await
+    GoRoute(
+      path: '/async_demo',
+      builder: (context, state) => const AsyncDemoScreen(),
+    ),
+    // Ruta para demo de Timer
+    GoRoute(
+      path: '/timer',
+      builder: (context, state) => const TimerScreen(),
+    ),
+    // Ruta para demo de Isolate
+    GoRoute(
+      path: '/isolate_demo',
+      builder: (context, state) => const IsolateDemoScreen(),
+    ),
+    // Ruta para lista de Pokémon
+    GoRoute(
+      path: '/pokemons',
+      builder: (context, state) => const PokemonListView(),
+    ),
+    // Ruta para detalle de Pokémon
+    GoRoute(
+      path: '/pokemon/:name',
+      builder: (context, state) {
+        final name = state.pathParameters['name']!;
+        return PokemonDetailView(name: name);
+      },
     ),
   ],
 );
