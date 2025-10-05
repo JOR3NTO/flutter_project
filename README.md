@@ -116,6 +116,8 @@ Evidencia: Captura de la pantalla de Isolate mostrando el estado antes y despué
 Descripción: Se creó una demo que ejecuta una tarea pesada en un Isolate, mostrando el resultado sin bloquear la interfaz.
 
 <img width="382" height="817" alt="Captura de pantalla 2025-10-05 175535" src="https://github.com/user-attachments/assets/7f70a8fc-9e8e-4619-bb4d-7fb96adf41d2" />
+<img width="716" height="133" alt="image" src="https://github.com/user-attachments/assets/2cc7de4c-08ad-4567-9cdc-17aa2eaeb2d1" />
+
 
 
 
