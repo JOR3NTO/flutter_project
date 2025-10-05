@@ -28,18 +28,21 @@ class _IsolateDemoScreenState extends State<IsolateDemoScreen> {
       _loading = true;
       _resultado = null;
     });
-    print('Antes de Isolate.spawn');
+    print('[IsolateDemo] INICIO: Ejecutando tarea pesada en Isolate');
     final receivePort = ReceivePort();
+    print('[IsolateDemo] Creando Isolate...');
     await Isolate.spawn(sumaGrande, receivePort.sendPort);
-    print('Durante Isolate.spawn');
+    print('[IsolateDemo] Isolate creado y ejecutando sumaGrande');
     receivePort.listen((data) {
+      print('[IsolateDemo] Resultado recibido del Isolate: $data');
       setState(() {
         _estado = '¡Tarea pesada completada!';
         _resultado = data as int;
         _loading = false;
       });
-      print('Después de recibir el resultado del Isolate');
+      print('[IsolateDemo] Cerrando ReceivePort...');
       receivePort.close();
+      print('[IsolateDemo] FIN: Tarea pesada finalizada');
     });
   }
 
