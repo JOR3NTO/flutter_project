@@ -84,46 +84,40 @@ HomeScreen
     flutter run
     ```
 
+---
 ## Evidencias
+**Menú global (CustomDrawer)**
 
-### Evidencia 1 – Estado inicial de la app (Hola, Flutter)  
-En esta captura se muestra la aplicación al iniciar, con el **AppBar** que contiene el título por defecto *“Hola, Flutter”*, junto con el nombre del estudiante y las imágenes cargadas en el **Row**.  
+Evidencia: Captura de pantalla mostrando el menú lateral abierto con las opciones principales.
+Descripción: Se implementó un Drawer global accesible desde todas las vistas principales, permitiendo navegación rápida entre demos y funcionalidades.
+<img width="408" height="847" alt="Captura de pantalla 2025-10-05 170556" src="https://github.com/user-attachments/assets/3455a208-80c4-4c35-b2da-228d59f3ce1a" />
 
-<img width="466" height="824" alt="Estado inicial" src="https://github.com/user-attachments/assets/79173306-776f-410f-a4da-ce4881631c2b" />
 
----
+**Demo Future/async/await**
 
-### Evidencia 2 – Estado tras presionar el botón (¡Título cambiado! + SnackBar)  
-Aquí se evidencia el uso de **setState()**, que alterna el título del **AppBar** a *“¡Título cambiado!”* y despliega un **SnackBar** con el mensaje *“Título actualizado”*.  
+Evidencia: Captura de la pantalla "Demo Asincronía (Future/async/await)" mostrando el resultado exitoso o el mensaje de error.
+Descripción: Se desarrolló una vista que simula la consulta de datos usando Future y async/await, mostrando el estado y manejando errores con SnackBar.
 
-<img width="451" height="318" alt="Cambio de título" src="https://github.com/user-attachments/assets/239e8da8-dca2-4613-89ec-5efc53506aa0" />  
-<img width="425" height="298" alt="SnackBar" src="https://github.com/user-attachments/assets/2189fbf5-b500-4719-a3e1-771a0e99f1e4" />
+<img width="320" alt="Demo Async Await 1" src="https://github.com/user-attachments/assets/454c2414-6f06-4199-ac40-f7c450bca8c5" />
+<img width="320" alt="Demo Async Await 2" src="https://github.com/user-attachments/assets/4fafa8a4-5d4e-489f-89fb-97deaa9782ef" />
 
----
 
-### Evidencia 3 – Funcionamiento de los widgets adicionales  
-Se muestran en ejecución los siguientes **widgets adicionales**:  
 
-- **Container** con márgenes, bordes y color.  
-- **ListView** con varios elementos y sus íconos.  
-- **Stack** con una imagen y texto superpuesto.  
-- **OutlinedButton.icon** con una acción secundaria que despliega un **SnackBar**.  
+**Cronómetro (Timer)**
 
-<img width="440" height="588" alt="Widgets adicionales" src="https://github.com/user-attachments/assets/df9c6e6b-b194-40bf-930b-4593f6c9b6c6" />
+Evidencia: Captura de la pantalla del cronómetro mostrando el tiempo y los botones de control.
+Descripción: Se implementó un cronómetro usando Timer, con controles para iniciar, pausar, reanudar y reiniciar el conteo.
 
----
+<img width="375" height="822" alt="Captura de pantalla 2025-10-05 175525" src="https://github.com/user-attachments/assets/01c302b7-7eb2-4ebd-a8a8-77807699eb84" />
 
-### Evidencia 4 – Pull Request feature/taller1 → dev  
-Captura del **Pull Request** creado desde la rama `feature/taller1` hacia `dev`, donde se integran los cambios desarrollados para el taller.  
+**Isolate (Tarea pesada)**
 
-<img width="921" height="748" alt="PR feature/taller1 a dev" src="https://github.com/user-attachments/assets/b97f790c-eea6-401b-bc4b-2f57db026bf0" />
+Evidencia: Captura de la pantalla de Isolate mostrando el estado antes y después de la tarea pesada.
+Descripción: Se creó una demo que ejecuta una tarea pesada en un Isolate, mostrando el resultado sin bloquear la interfaz.
 
----
+<img width="382" height="817" alt="Captura de pantalla 2025-10-05 175535" src="https://github.com/user-attachments/assets/7f70a8fc-9e8e-4619-bb4d-7fb96adf41d2" />
 
-### Evidencia 5 – Pull Request dev → main  
-Captura del **Pull Request** creado desde la rama `dev` hacia `main`, donde se integran las funcionalidades finales en la rama principal.  
 
-<img width="944" height="775" alt="image" src="https://github.com/user-attachments/assets/85bf16c2-89b2-4547-bc24-3c7c9f5e7620" />
 
 
 
