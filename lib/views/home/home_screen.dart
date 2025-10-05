@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: Center(
           child: Text(
-            'Welcome to the Home Dashboard',
+            'Inicio de la aplicación. Usa el menú lateral para navegar entre las diferentes vistas y demos.',
             style: TextStyle(fontSize: 18),
           ),
         ),
