@@ -10,9 +10,29 @@ import '../views/timer_screen.dart';
 import '../views/insolate/isolate_demo_screen.dart';
 import '../views/pokemons/pokemon_list_view.dart';
 import '../views/pokemons/pokemon_detail_view.dart';
+import '../views/dogs/dog_list_view.dart';
+import '../views/dogs/dog_detail_view.dart';
+import '../models/dog_breed.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [
+    // Rutas para Dog CEO
+    GoRoute(
+      path: '/dogs',
+      name: 'dog_list',
+      builder: (context, state) => const DogListView(),
+      routes: [
+        GoRoute(
+          path: 'detail/:name',
+          name: 'dog_detail',
+          builder: (context, state) {
+            final name = state.pathParameters['name']!;
+            final imageUrl = state.uri.queryParameters['imageUrl'] ?? '';
+            return DogDetailView(breed: DogBreed(name: name, imageUrl: imageUrl));
+          },
+        ),
+      ],
+    ),
     GoRoute(
       path: '/',
       builder: (context, state) => const HomeScreen(), // Usa HomeView
