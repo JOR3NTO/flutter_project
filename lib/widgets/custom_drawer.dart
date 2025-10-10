@@ -84,6 +84,14 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.pets),
+            title: const Text('Dog CEO (HTTP)'),
+            onTap: () {
+              context.go('/dogs');
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.catching_pokemon),
             title: const Text('Lista de Pokémon'),
             onTap: () {
