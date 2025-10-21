@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097032101717",
+    "project_id": "flutterproject-1e057",
+    "storage_bucket": "flutterproject-1e057.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097032101717:android:a421b5c744b2b5117289dc",
+        "android_client_info": {
+          "package_name": "com.example.parqueadero_2025_g2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0RfJ9Y6W0lYIu2S5MZnZhkecjWcxA2F8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
