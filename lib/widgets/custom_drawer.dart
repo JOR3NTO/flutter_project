@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+
+
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
@@ -19,11 +21,34 @@ class CustomDrawer extends StatelessWidget {
             child: const Text(
               'Menú',
               style: TextStyle(
-                color: Colors
-                    .white, // Texto blanco para contrastar con el color primario
+                color: Colors.white, // Texto blanco para contrastar con el color primario
                 fontSize: 24,
               ),
             ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.verified_user),
+            title: const Text('Evidencia (Almacenamiento)'),
+            onTap: () {
+              context.go('/evidence');
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.login),
+            title: const Text('Login'),
+            onTap: () {
+              context.go('/login');
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.app_registration),
+            title: const Text('Registro'),
+            onTap: () {
+              context.go('/register');
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.home),

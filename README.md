@@ -1,39 +1,64 @@
 
-## Distribución y pruebas (Firebase App Distribution)
 
-Pasos rápidos para el taller:
+# Taller JWT Flutter + Backend Oracle
 
-1. Generar APK de release:
-    - Ejecutar: `flutter build apk` (genera `build/app/outputs/flutter-apk/app-release.apk`).
-2. Configurar Firebase:
-    - Crear o abrir su proyecto en Firebase Console.
-    - Registrar la app Android usando `applicationId` en `android/app/build.gradle.kts`.
-    - Subir `google-services.json` al folder `android/app/`.
-3. App Distribution:
-    - Ir a App Distribution → Testers & Groups y crear un grupo `QA_Clase`.
-    - Agregar `dduran@uceva.edu.co` como tester.
-    - Subir el APK (`app-release.apk`) en Releases y asignarlo al grupo `QA_Clase`.
-    - Incluir notas de la versión (Release Notes): cambios, fecha, credenciales si aplica.
-    - Distribuir y copiar el enlace de instalación para evidencias.
+## Backend desplegado (Oracle Cloud)
 
-Checklist de evidencias:
- - Captura del panel de Releases con la versión visible.
- - Captura del grupo de testers mostrando a `dduran@uceva.edu.co` agregado.
- - Captura del correo de invitación o del enlace de instalación.
- - Foto/captura de la app instalada en un dispositivo Android.
- - Evidencia de actualización (por ejemplo, versión `1.0.0` → `1.0.1`).
- - Bitácora corta de QA (versión, fecha, cambios, incidencias, estado).
+Base URL: `http://157.137.237.230:8080/auth`
 
-Template de Release Notes (ejemplo):
-```
-Versión: 1.0.1
-Fecha: 2025-10-20
-Cambios:
-- Corrección de error de compilación en Gradle (moved dependencies block)
-- Integración de Firebase App Distribution
-Responsables: JOR3NTO
-Credenciales de prueba: Usuario: demo / Pass: demo 
-```
+### Endpoints disponibles:
+
+- **Registro:**
+    - `POST http://157.137.237.230:8080/auth/register`
+    - Body: `{ "email": "test@email.com", "password": "123456" }`
+    - Respuesta: 200 OK si éxito, 400 si error
+
+- **Login:**
+    - `POST http://157.137.237.230:8080/auth/login`
+    - Body: `{ "email": "test@email.com", "password": "123456" }`
+    - Respuesta: 200 OK (token JWT como string plano), 401 si error
+
+- **Obtener usuario autenticado:**
+    - `GET http://157.137.237.230:8080/auth/me`
+    - Header: `Authorization: Bearer <token>`
+    - Respuesta: datos del usuario (JSON)
+
+No hay refresh token, solo access_token.
+
+---
+
+## Funcionalidad Flutter
+
+- Login y registro usando JWT contra el backend Oracle
+- Manejo de estados (cargando, éxito, error) y separación por servicios
+- Almacenamiento local:
+    - **shared_preferences:** email (no sensible)
+    - **flutter_secure_storage:** access_token (sensible)
+- Vista de evidencia:
+    - Muestra email guardado
+    - Indica si el token está presente o no
+    - Botón para cerrar sesión (elimina datos locales)
+
+### Rutas principales en la app
+
+- `/login` — Pantalla de inicio de sesión
+- `/register` — Pantalla de registro
+- `/evidence` — Pantalla de evidencia de almacenamiento local
+- `/` — Menú principal
+
+### Menú lateral
+
+- Acceso directo a login, registro y evidencia
+
+---
+
+## ¿Cómo probar?
+
+1. Regístrate con un email y contraseña válidos
+2. Inicia sesión con esos datos
+3. Accede a la pantalla de evidencia desde el menú
+4. Verifica el email y el estado del token
+5. Usa el botón "Cerrar sesión" para borrar los datos
 
 ---
 

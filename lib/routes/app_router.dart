@@ -1,4 +1,6 @@
 
+import '../views/auth/evidence_screen.dart';
+
 import 'package:go_router/go_router.dart';
 import '../views/ciclo_vida/ciclo_vida_screen.dart';
 import '../views/paso_parametros/detalle_screen.dart';
@@ -14,8 +16,23 @@ import '../views/dogs/dog_list_view.dart';
 import '../views/dogs/dog_detail_view.dart';
 import '../models/dog_breed.dart';
 
+import '../views/auth/login_screen.dart';
+import '../views/auth/register_screen.dart';
+
 final GoRouter appRouter = GoRouter(
   routes: [
+    GoRoute(
+      path: '/evidence',
+      builder: (context, state) => const EvidenceScreen(),
+    ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegisterScreen(),
+    ),
     // Rutas para Dog CEO
     GoRoute(
       path: '/dogs',
