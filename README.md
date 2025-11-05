@@ -1,71 +1,32 @@
+## Módulo Firebase: Universidades
 
+### Descripción técnica
 
-# Taller JWT Flutter + Backend Oracle
+- **Arquitectura:**
+    - Flutter + Provider para gestión de estado.
+    - Firebase Firestore como backend para la colección `universidades`.
+    - Separación en modelos (`lib/models/universidad.dart`), servicios (`lib/services/universidad_service.dart`), vistas y rutas.
+    - Navegación con `go_router` y menú lateral persistente.
 
-## Backend desplegado (Oracle Cloud)
+- **Estado y flujo:**
+    - Listado en tiempo real usando `StreamBuilder` y Firestore.
+    - Formulario para crear nuevas universidades (campos: nit, nombre, dirección, teléfono, página web).
+    - Botón para eliminar con confirmación (diálogo modal).
+    - Validación básica: todos los campos obligatorios, página web acepta cualquier string.
 
-Base URL: `http://157.137.237.230:8080/auth`
+- **Validaciones:**
+    - Todos los campos son requeridos.
+    - El campo página web no exige formato URL, solo no vacío.
+    - Eliminación requiere confirmación explícita.
 
-### Endpoints disponibles:
-
-- **Registro:**
-    - `POST http://157.137.237.230:8080/auth/register`
-    - Body: `{ "email": "test@email.com", "password": "123456" }`
-    - Respuesta: 200 OK si éxito, 400 si error
-
-- **Login:**
-    - `POST http://157.137.237.230:8080/auth/login`
-    - Body: `{ "email": "test@email.com", "password": "123456" }`
-    - Respuesta: 200 OK (token JWT como string plano), 401 si error
-
-- **Obtener usuario autenticado:**
-    - `GET http://157.137.237.230:8080/auth/me`
-    - Header: `Authorization: Bearer <token>`
-    - Respuesta: datos del usuario (JSON)
-
-No hay refresh token, solo access_token.
-
----
-
-## Funcionalidad Flutter
-
-- Login y registro usando JWT contra el backend Oracle
-- Manejo de estados (cargando, éxito, error) y separación por servicios
-- Almacenamiento local:
-    - **shared_preferences:** email (no sensible)
-    - **flutter_secure_storage:** access_token (sensible)
-- Vista de evidencia:
-    - Muestra email guardado
-    - Indica si el token está presente o no
-    - Botón para cerrar sesión (elimina datos locales)
-
-### Rutas principales en la app
-
-- `/login` — Pantalla de inicio de sesión
-- `/register` — Pantalla de registro
-- `/evidence` — Pantalla de evidencia de almacenamiento local
-- `/` — Menú principal
-
-### Menú lateral
-
-- Acceso directo a login, registro y evidencia
+- **Evidencias:**
+    - Capturas de configuración de Firebase en el proyecto.
+      <img width="1559" height="657" alt="Captura de pantalla 2025-11-04 224635" src="https://github.com/user-attachments/assets/d7b9838f-5a67-42f0-ae2a-299ce0b75b1d" />
+    - Capturas de la colección `universidades` en Firestore mostrando los documentos y campos.
+      <img width="1550" height="574" alt="Captura de pantalla 2025-11-04 225611" src="https://github.com/user-attachments/assets/23f78b76-f337-4b26-9ece-11ad53dc1b18" />    - 
+    - Capturas de la app móvil mostrando el listado y la creación de universidades.
+      <img width="385" height="826" alt="Captura de pantalla 2025-11-04 225528" src="https://github.com/user-attachments/assets/317aa0d0-6ac9-4911-a602-31ea6360351a" />
 
 ---
-
-## ¿Cómo probar?
-
-1. Regístrate con un email y contraseña válidos
-2. Inicia sesión con esos datos
-3. Accede a la pantalla de evidencia desde el menú
-4. Verifica el email y el estado del token
-5. Usa el botón "Cerrar sesión" para borrar los datos
-
----
-
-## QA Log
-Archivo de seguimiento de pruebas rápidas y hallazgos en `docs/qa_log.md`.
-
-### Cambios recientes
-- 2025-10-20: Se cambió el icono de la app. Se generaron los assets con `flutter_launcher_icons` usando `assets/img/app_icon.png`.
 
 

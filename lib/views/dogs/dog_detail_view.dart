@@ -59,14 +59,14 @@ class _DogDetailViewState extends State<DogDetailView> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Container(
+          Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: Colors.blue.shade100,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    'URL imagen recibida:\n${imageUrl}',
+              'URL imagen recibida:\n$imageUrl',
                     style: const TextStyle(fontSize: 14, color: Colors.black87),
                     textAlign: TextAlign.center,
                   ),

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../widgets/base_view.dart';
-import '../../widgets/custom_drawer.dart';
+// import eliminado
 
 class FutureView extends StatefulWidget {
   const FutureView({super.key});

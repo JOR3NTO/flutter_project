@@ -1,3 +1,7 @@
+import '../views/universidades/universidad_list.dart';
+import '../views/universidades/universidad_form.dart';
+import 'package:flutter_project/views/categoria_fb/categoria_fb_form_view.dart';
+import 'package:flutter_project/views/categoria_fb/categoria_fb_list_view.dart';
 
 import '../views/auth/evidence_screen.dart';
 
@@ -22,13 +26,18 @@ import '../views/auth/register_screen.dart';
 final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
+      path: '/universidades',
+      builder: (context, state) => const UniversidadList(),
+    ),
+    GoRoute(
+      path: '/universidad_form',
+      builder: (context, state) => const UniversidadForm(),
+    ),
+    GoRoute(
       path: '/evidence',
       builder: (context, state) => const EvidenceScreen(),
     ),
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
-    ),
+    GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
     GoRoute(
       path: '/register',
       builder: (context, state) => const RegisterScreen(),
@@ -45,7 +54,9 @@ final GoRouter appRouter = GoRouter(
           builder: (context, state) {
             final name = state.pathParameters['name']!;
             final imageUrl = state.uri.queryParameters['imageUrl'] ?? '';
-            return DogDetailView(breed: DogBreed(name: name, imageUrl: imageUrl));
+            return DogDetailView(
+              breed: DogBreed(name: name, imageUrl: imageUrl),
+            );
           },
         ),
       ],
@@ -90,10 +101,7 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const AsyncDemoScreen(),
     ),
     // Ruta para demo de Timer
-    GoRoute(
-      path: '/timer',
-      builder: (context, state) => const TimerScreen(),
-    ),
+    GoRoute(path: '/timer', builder: (context, state) => const TimerScreen()),
     // Ruta para demo de Isolate
     GoRoute(
       path: '/isolate_demo',
@@ -110,6 +118,24 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) {
         final name = state.pathParameters['name']!;
         return PokemonDetailView(name: name);
+      },
+    ),
+    GoRoute(
+      path: '/categoriasFirebase',
+      name: 'categoriasFirebase',
+      builder: (_, __) => const CategoriaFbListView(),
+    ),
+    GoRoute(
+      path: '/categoriasfb/create',
+      name: 'categoriasfb.create',
+      builder: (context, state) => const CategoriaFbFormView(),
+    ),
+    GoRoute(
+      path: '/categoriasfb/edit/:id',
+      name: 'categorias.edit',
+      builder: (context, state) {
+        final id = state.pathParameters['id']!;
+        return CategoriaFbFormView(id: id);
       },
     ),
   ],
