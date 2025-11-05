@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
 
 class EvidenceScreen extends StatelessWidget {
-  const EvidenceScreen({Key? key}) : super(key: key);
+  const EvidenceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
