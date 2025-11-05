@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_project/firebase_options.dart';
 import 'routes/app_router.dart';
 import 'themes/app_theme.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +14,8 @@ Future<void> main() async {
   } catch (e) {
     debugPrint('Error loading .env file: $e');
   }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  
   runApp(
     MultiProvider(
       providers: [

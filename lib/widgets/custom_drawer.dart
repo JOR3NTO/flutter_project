@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
-
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
@@ -21,7 +19,8 @@ class CustomDrawer extends StatelessWidget {
             child: const Text(
               'Menú',
               style: TextStyle(
-                color: Colors.white, // Texto blanco para contrastar con el color primario
+                color: Colors
+                    .white, // Texto blanco para contrastar con el color primario
                 fontSize: 24,
               ),
             ),
@@ -150,6 +149,19 @@ class CustomDrawer extends StatelessWidget {
             onTap: () {
               context.go('/ciclo_vida');
             },
+          ),
+          ListTile(
+            leading: const Icon(Icons.school),
+            title: const Text('Universidades'),
+            onTap: () {
+              context.go('/universidades');
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.cloud),
+            title: const Text('Categorías Firebase'),
+            onTap: () => context.pushNamed('categoriasFirebase'),
           ),
         ],
       ),

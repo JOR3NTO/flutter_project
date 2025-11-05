@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/dog_breed.dart';
 import '../../services/dog_service.dart';
-import 'dog_detail_view.dart';
+// import eliminado
 import 'package:go_router/go_router.dart';
 
 class DogListView extends StatefulWidget {
