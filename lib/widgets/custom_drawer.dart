@@ -12,15 +12,12 @@ class CustomDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Theme.of(
-                context,
-              ).colorScheme.primary, // Usa el color primario del tema
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: const Text(
               'Menú',
               style: TextStyle(
-                color: Colors
-                    .white, // Texto blanco para contrastar con el color primario
+                color: Colors.white,
                 fontSize: 24,
               ),
             ),
@@ -73,6 +70,14 @@ class CustomDrawer extends StatelessWidget {
                 '/settings',
               ); // Navega a la pantalla de configuración
               Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.check_box),
+            title: const Text('To-Do List'),
+            onTap: () {
+              context.go('/tasks');
+              Navigator.pop(context);
             },
           ),
           ListTile(
