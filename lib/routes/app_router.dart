@@ -1,3 +1,4 @@
+import '../views/tasks/task_list_screen.dart';
 import '../views/universidades/universidad_list.dart';
 import '../views/universidades/universidad_form.dart';
 import 'package:flutter_project/views/categoria_fb/categoria_fb_form_view.dart';
@@ -25,6 +26,10 @@ import '../views/auth/register_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [
+    GoRoute(
+      path: '/tasks',
+      builder: (context, state) => const TaskListScreen(),
+    ),
     GoRoute(
       path: '/universidades',
       builder: (context, state) => const UniversidadList(),
